@@ -8,6 +8,7 @@
     "testing/environment-researcher",
     "testing/task-json-generator",
     "testing/test-graph-builder",
-    "testing/test-runner"
+    "testing/test-runner",
+    "testing/test-runner-retry-2"
   ]
 }
