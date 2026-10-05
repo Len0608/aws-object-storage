@@ -1,4 +1,5 @@
 {
+  "type": "taskUniversal",
   "name": "Test_AwsObjectStorage_ListObjects_LargeOutputCap",
   "template": "Aws Object Storage",
   "agent": "nginx-with-sidecar - AKS-SIDECAR-TEST",
@@ -42,7 +43,10 @@
   "credentials": null,
   "runtimeDir": null,
   "environment": [
-    {"name": "UE_MAX_OUTPUT_RECORDS", "value": "500"}
+    {
+      "name": "UE_MAX_OUTPUT_RECORDS",
+      "value": "500"
+    }
   ],
   "variables": [],
   "retryIndefinitely": false,

@@ -1,4 +1,5 @@
 {
+  "type": "taskUniversal",
   "name": "Test_AwsObjectStorage_UploadFile_RootKey",
   "template": "Aws Object Storage",
   "agent": "nginx-with-sidecar - AKS-SIDECAR-TEST",
