@@ -9,6 +9,7 @@
     "testing/task-json-generator",
     "testing/test-graph-builder",
     "testing/test-runner",
-    "testing/test-runner-retry-2"
+    "testing/test-runner-retry-2",
+    "testing/test-runner-retry-3"
   ]
 }

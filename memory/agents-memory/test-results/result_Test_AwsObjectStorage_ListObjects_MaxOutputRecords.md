@@ -4,13 +4,11 @@
 
 ### Output:
 ```
-Status: START FAILURE
-StatusDescription: Python requirements not satisfied: >=3.14
-ExitCode: 0
+statusCode: START FAILURE
+statusDescription: Python requirements not satisfied: >=3.14
 STDOUT: [empty]
 STDERR: [empty]
 ```
 
 ### Notes:
-- Task did not execute; agent (nginx-with-sidecar - AKS-SIDECAR-TEST) Python version does not satisfy >=3.14 requirement from extension.yml
-- No AWS API calls were made; failure occurred at the UAC pre-launch stage
+- Task failed at start before execution; agent rejected the Python version requirement (extension requires >=3.14, agent does not satisfy this)
