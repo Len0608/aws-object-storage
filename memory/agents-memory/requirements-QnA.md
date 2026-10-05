@@ -109,7 +109,7 @@ Answering these five questions fully specifies the extension for implementation.
 - **Rationale**: A table with size and date provides meaningful context at no extra implementation cost, and matches the architect notes' recommendation for tabular data on STDOUT.
 - **Trade-offs**: Option A adds the `tabulate` dependency; Option B avoids it. For an MVP, the added clarity of a table outweighs the marginal dependency cost.
 - **Requirement Impact**: Confirms inclusion of `tabulate==0.10.0` in `requirements.txt`.
-- **User's Answer**: Option A — ASCII table with Object Key, Size (bytes), Last Modified.
+- **User's Answer**: Option A — ASCII table with Key, Size, Last Modified.
 
 ---
 
@@ -128,7 +128,7 @@ Answering these five questions fully specifies the extension for implementation.
 - **Rationale**: Even for an MVP demo, a bucket used in testing might have hundreds of objects. Applying the safety net costs very little code and prevents a hard-to-debug failure at demo time.
 - **Trade-offs**: Option A adds a few lines of environment variable handling; Option B is marginally simpler but can silently produce massive output.
 - **Requirement Impact**: None — this is an operational safety feature, not a new functional requirement.
-- **User's Answer**: Option A — apply `UE_MAX_OUTPUT_RECORDS` cap (default 100).
+- **User's Answer**: Option A — apply `UE_MAX_OUTPUT_RECORDS` with default 100.
 
 ---
 
@@ -152,7 +152,7 @@ Answering these five questions fully specifies the extension for implementation.
 - **Rationale**: These two fields give operators instant, actionable feedback (how many objects exist; where exactly the file landed) without requiring them to open the log. They are the most valuable single facts for each action.
 - **Trade-offs**: Optimizes for operator UX at the cost of two additional output field definitions. No measurable downside for an MVP.
 - **Requirement Impact**: Adds two output-only fields to the template definition: `object_count` (Integer Field) and `s3_uri` (Text Field).
-- **User's Answer**: Option A for both actions — Object Count for List Objects, S3 URI for Upload File.
+- **User's Answer**: Both Option A — Object Count for List Objects, S3 URI for Upload File.
 
 ---
 
@@ -197,4 +197,4 @@ Answering these five questions fully specifies the extension for implementation.
 - **Rationale**: The richer structure makes the Extension Output useful for downstream workflow tasks (e.g., a follow-up task that processes each listed object). Adding size to the Upload confirmation makes it easy to verify the upload was complete. The cost is negligible.
 - **Trade-offs**: Option A produces slightly more JSON; Option B is marginally simpler. For an MVP demo, Option A demonstrates the extension's automation value better.
 - **Requirement Impact**: None — this is the implementation design for Extension Output, which is not constrained by the requirements.
-- **User's Answer**: Option A for both actions — full object list with total count for List Objects; bucket, key, S3 URI, and size for Upload File.
+- **User's Answer**: Option A for both actions.
