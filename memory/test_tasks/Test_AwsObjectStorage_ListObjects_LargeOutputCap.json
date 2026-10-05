@@ -1,0 +1,55 @@
+{
+  "name": "Test_AwsObjectStorage_ListObjects_LargeOutputCap",
+  "template": "Aws Object Storage",
+  "agent": "nginx-with-sidecar - AKS-SIDECAR-TEST",
+  "summary": "List objects in an S3 bucket with UE_MAX_OUTPUT_RECORDS capped at 500",
+  "choiceField1": {
+    "label": "Action",
+    "name": "action",
+    "value": "List Objects"
+  },
+  "credentialField1": {
+    "label": "AWS Credentials",
+    "name": "aws_credentials",
+    "value": "aws-s3-test-credentials"
+  },
+  "textField1": {
+    "label": "AWS Region",
+    "name": "aws_region",
+    "value": "us-east-1"
+  },
+  "textField2": {
+    "label": "Bucket Name",
+    "name": "bucket_name",
+    "value": "ue-test-bucket-20261005"
+  },
+  "textField3": {
+    "label": "Local File Path",
+    "name": "local_file",
+    "value": null
+  },
+  "textField4": {
+    "label": "S3 Object Key",
+    "name": "s3_object_key",
+    "value": null
+  },
+  "exitCodeProcessing": "Success Exitcode Range",
+  "exitCodes": "0",
+  "outputType": "STDOUT",
+  "outputReturnType": "NONE",
+  "outputReturnSline": "1",
+  "outputReturnNline": "100",
+  "credentials": null,
+  "runtimeDir": null,
+  "environment": [
+    {"name": "UE_MAX_OUTPUT_RECORDS", "value": "500"}
+  ],
+  "variables": [],
+  "retryIndefinitely": false,
+  "retryMaximum": 0,
+  "retryInterval": 60,
+  "retryExitCodes": null,
+  "retrySuppressFailure": false,
+  "exclusiveWithSelf": false,
+  "executionRestriction": "None"
+}
